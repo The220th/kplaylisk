@@ -30,7 +30,7 @@ def build_playlist(in_paths: list[str, ...], out_path: str,
                    if_abs_path: bool,
                    audio_only: bool, video_only: bool,
                    if_shuffle: bool, if_sort: bool,
-                   print_not_included: bool, append: bool):
+                   print_not_included: bool):
     files = []
     if is_url(out_path):
         print(f"Output file \"{out_path}\" cannot be url. ")
@@ -72,13 +72,7 @@ def build_playlist(in_paths: list[str, ...], out_path: str,
     elif if_sort:
         files = sorted(files)
 
-    if append and os.path.isfile(out_path):
-        playlist = m3u8.load(out_path)
-        print(len(playlist.segments))
-        for segment in playlist.segments:
-            print(f"{segment.uri}")
-    else:
-        playlist = m3u8.M3U8()
+    playlist = m3u8.M3U8()
 
     for file_i in tqdm(files):
         if is_url(file_i):

@@ -11,7 +11,7 @@ def main():
                        if_abs_path=args.abs_path,
                        audio_only=args.audio_only, video_only=args.video_only,
                        if_shuffle=args.shuffle, if_sort=args.sort,
-                       print_not_included=args.print_not_included, append=args.append)
+                       print_not_included=args.print_not_included)
     else:
         print(f"main: Failed successfully. ")
         exit(-1)

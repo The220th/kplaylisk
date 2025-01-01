@@ -32,9 +32,6 @@ def get_args() -> argparse.Namespace:
     build_parser.add_argument("--print_not_included", default=False, action="store_true",
                               help="All media files that are not included in the playlist, "
                                    "but are in the directories, will be output. ")
-    build_parser.add_argument("--append", default=False, action="store_true",
-                              help="Add files to playlist, if m3u8 file already exists. ")
-
 
     args = parser.parse_args()
 
